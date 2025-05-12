@@ -15,6 +15,7 @@ class Themetoggler extends React.Component{
     render(){
         return(
             <div style={{backgroundColor:this.state.a?"black":"white"}} id="theme">
+                <h2>THEME TOGGLER</h2>
                 <button onClick={this.Themetoggler} id="Themes"> {this.state.a? <IoMdSunny/>:<FaMoon/>} </button>
             </div>
         )

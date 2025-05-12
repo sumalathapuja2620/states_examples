@@ -1,15 +1,14 @@
 import React from 'react';
-import './Randomquote.css'
-class Randomquote extends React.Component{
+import './Randomq.css'
+class Randomq extends React.Component{
     constructor(){
         super()
         this.state={
-            quote:"",
-            color:""
+            quote:""
         }
     }
-    Randomquote=()=>{
-        let quotes= [
+    randomQ=()=>{
+        let quotes=[
   "Believe you can and you're halfway there.",
   "Don't watch the clock; do what it does. Keep going.",
   "Push yourself, because no one else is going to do it for you.",
@@ -41,30 +40,18 @@ class Randomquote extends React.Component{
   "A river cuts through rock, not because of its power, but because of its persistence.",
   "Winners are not people who never fail, but people who never quit."
 ];
-
-     const randomQUote=Math.floor(Math.random()*quotes.length)
-        // console.log(randomQUote)
-        const q=quotes[randomQUote]
-        console.log(q)
-        let chars="abcdef0123456789"
-        let hexa="#"
-        for (let i=0;i<6;i++){
-            // console.log(i)
-            const randomNum=Math.floor(Math.random()*chars.length)
-            // console.log(randomNum)
-            hexa+=chars[randomNum]
-        }
-
-        this.setState({quote:this.state.quote=q,color:hexa})
+         const random=Math.floor(Math.random()*quotes.length)
+          const q=quotes[random]
+        this.setState({quote:this.state.quote=q})
     }
     render(){
         return(
-            <div id="quote" style={{backgroundColor:this.state.color}}>
-                <h2>RANDOM QUOTE GENERATOR AND BACKGROUND COLORS</h2>
+            <div id="quote">
+                <h2>RANDOM QUOTE GENERATOR</h2>
                 <h3>{this.state.quote}</h3>
-                <button onClick={this.Randomquote} id="randoms">RANDOM QUOTE</button>
+                <button onClick={this.randomQ} id="randoms">RANDOM QUOTE</button>
             </div>
         )
     }
 }
-export default Randomquote;
+export default Randomq
